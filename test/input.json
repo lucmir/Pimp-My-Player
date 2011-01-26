@@ -1,0 +1,27 @@
+{ "items":[
+  {
+    "type": "text",
+    "position": [52, 97],
+    "content": "Texto de Teste."
+  },
+  {
+    "type": "text",
+    "position": [12, 07],
+    "content": "Mais Teste."
+  },
+  {
+    "type": "text",
+    "position": [22, 17],
+    "content": "Texto de Teste mais uma vez."
+  },
+  {
+    "type": "text",
+    "position": [05, 19],
+    "content": "Mais texto de teste."
+  },
+  {
+    "type": "text",
+    "position": [12, 57],
+    "content": "Outro Texto de Teste."
+  }]
+}

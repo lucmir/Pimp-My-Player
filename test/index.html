@@ -3,21 +3,48 @@
    <head>                                                                  
       
       <script type="text/javascript" src="jquery-1.4.4/jquery-1.4.4.js"></script>          
-      <script type="text/javascript">                                         
+      <script type="text/javascript">
+
           $(document).ready(function() {
 
-             $("a").click(function() {
-                alert("Test");
+             $("#input").die('click').live('click', function() {
+                $.getJSON('input.json', function(data) {
+                   $.each(data.items, function(i,item) {
+                       $('#result').append (
+                          '<tr/><td>' + i + '</td>' +
+                          '<td>' + item.content + '</td>' +
+                          '<td>' + item.type + '</td>' +
+                          '<td>' + '(' + item.position[0] + ',' + item.position[1] + ')</td></tr>'
+                       );
+                   });
+                });
+             });
+
+             $("#clear").die('click').live('click', function() {
+                var $firstLine = $('#result tr:first').clone();
+                $('#result tr').remove();
+                $('#result').append($firstLine);
              });
 
           });
+
       </script>
 
    </head>                                                                 
 
    <body>                                                                  
 
-       <a href="#">Link</a>
+       <button id="input">Input</button>
+       <button id="clear">Clear</button>
+       <br></br>
+       <table id="result" border="1">
+          <tr>
+             <td><strong>NUM</strong></td>
+             <td><strong>VALOR</strong></td>
+             <td><strong>TIPO</strong></td>
+             <td><strong>POSICAO</strong></td>
+          </tr>
+       </table>
             
    </body>                                                                 
 
